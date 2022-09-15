@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Game</title>
+</head>
+<body>
+    <div class="main-menu">
+        <div class="main-menu__holder">
+            <p class="main-menu__holder__title">My first game</p>
+            <button class="main-menu__holder__start" onclick="startGame()">START</button>
+        </div>  
+    </div>
+    <div class="game">
+        <div class="game__popup">
+            <p class="game__popup__text">Text fish</p>
+            <button class="game__popup__ok" onclick="showResult()">OK</button>
+        </div>
+        <div class="game__timer">Time: 0 seconds</div>
+        <div class="game__holder">
+            <div class="game__holder__row">
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+            </div>
+            <div class="game__holder__row">
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+            </div>
+            <div class="game__holder__row">
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+            </div>
+            <div class="game__holder__row">
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+            </div>
+            <div class="game__holder__row">
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+                <div class="cell"><p></p></div>
+            </div>
+        </div>
+        <button class="game__retry" onclick="refresh()">START AGAIN</button>
+    </div>
+    <script src="./js/main.js"></script> 
+    <div class="results">
+        <div class="results__holder">
+            <p>Podium</p>
+            <table class="podium">
+                <tr>
+                    <th>GAME</th>
+                    <th>TIME</th>
+                </tr>
+            </table>
+            <button class="results__holder__retry" onclick="refresh()">START AGAIN</button>
+        </div>
+        
+    </div>
+</body>
+</html>
