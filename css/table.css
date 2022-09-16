@@ -1,0 +1,19 @@
+table, th, td {
+    border:1px solid black;
+    font-size: 60px;
+    margin: 40px;
+  }
+  th{
+    background-color: rgb(56, 56, 255);
+    color: white;
+    width: 600px;
+  }
+  .darker_bg{
+    background-color: rgb(176, 176, 176);
+  }
+  .whiter_bg{
+    background-color: rgb(225, 225, 225);
+  }
+  .min_time_bg{
+    background-color: yellow;
+  }
