@@ -1,6 +1,6 @@
 $('.second_screen').hide();
 $('.third_screen').hide();
-let block,tableElement,resultTimeArr=[],randomArr=[],check=1,seconds = 60,isCheckMistake=true;
+let block,tableElement,resultTimeArr=[],randomArr=[],check=1,seconds =60,isCheckMistake=true;
 let time=document.querySelector('.time');
 let num=document.querySelector(`.c${check}`);
 
@@ -30,13 +30,22 @@ function severalRandom(min, max, num) {
 }
 randomArr=severalRandom(1,25,25);
 
-//cecle for build game field 
+// cecle for build game field 
 for(let i=0;i<25;i++){
-block=document.createElement('div');
-block.innerHTML=(`<p class='c${randomArr[i]}'>${randomArr[i]}</p>`)
-block.className='game_block';
-document.querySelector('.game_field').appendChild(block);
+    if(i===0||i%5===0){
+    block=document.createElement('tr');
+    let a=i;
+    block.innerHTML=(
+        `<td class='c${randomArr[a]} td'>${randomArr[a++]}</td>
+        <td class='c${randomArr[a]} td'>${randomArr[a++]}</td>
+        <td class='c${randomArr[a]} td'>${randomArr[a++]}</td>
+        <td class='c${randomArr[a]} td'>${randomArr[a++]}</td>
+        <td class='c${randomArr[a]} td'>${randomArr[a]}</td>`)
+        a=0;
+        document.querySelector('.game_field').appendChild(block);
+    }
 }
+
 document.querySelector('.game_field').onclick=(event)=>{
     if(event.target.classList.contains(`c${check}`)){
         console.log(`click on ${check}`);
@@ -71,7 +80,7 @@ document.querySelector('.game_field').onclick=(event)=>{
     }
 }
 
-// click onn button restart
+// click on button restart
 document.querySelector('.btn_restart').onclick=()=> location.reload();
 document.querySelector('.btn').onclick=()=> location.reload();
 

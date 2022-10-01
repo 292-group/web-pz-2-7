@@ -35,22 +35,24 @@ font-size: 100px;
 .btn_restart{
     background-color: blue;
     color: white;
+    /* width: 900px; */
+    /* margin-left:90px ; */
     font-size: 50px;
     border-radius: 20px;
 }
 .game_field{
-    width: 1020px;
-    height: 1020px;
+    width: 1000px;
+    height: 1000px;
     margin-bottom: 40px;
     border:solid black 4px;
 }
-.game_block{
+/* .game_block{
     width: 200px;  
     height: 200px;
     float: left;
     border:solid black 2px;
-}
-.game_field p{
+} */
+/* .game_field p{
     display:grid;
     position: relative;
     bottom: 50px;
@@ -59,6 +61,9 @@ font-size: 100px;
     text-align: center;
     align-items: center;
     
+} */
+.td{
+    text-align: center;
 }
 .gray_bg{
 z-index: -1;
