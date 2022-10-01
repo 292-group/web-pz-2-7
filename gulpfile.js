@@ -33,18 +33,18 @@ gulp.task('browser-sync', function () {
 
 gulp.task('js-dev', function () {
   return gulp.src([
-    'app/libs/somelibs.js'
+    'app/libs/main.js'
   ])
-    .pipe(concat('bundle.js'))
+    .pipe(concat('main.js'))
     .pipe(gulp.dest('app/js'));
 });
 
 gulp.task('js-prod', function () {
   return gulp.src([
-    'app/libs/somelibs.js'
+    'app/libs/main.js'
   ])
-    .pipe(concat('bundle.js'))
-    .pipe(uglify())
+    .pipe(concat('main.js'))
+    .pipe(uglify('main.js'))
     .pipe(gulp.dest('app/js'));
 });
 

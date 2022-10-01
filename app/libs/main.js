@@ -1,12 +1,12 @@
-let time;
-let timer;
+var time;
+var timer;
 
 $(document).ready(function(){
-    let sequence = [];
-    let arr = randomUniqueNum(25, 25);
+    var sequence = [];
+    var arr = randomUniqueNum(25, 25);
     console.log(arr);
     $(".cell").css("background-color", randomHex);
-    let number = $(".cell p");
+    var number = $(".cell p");
     for(i=0; i<25;i++){
         number[i].textContent = arr[i];
     }
@@ -23,7 +23,7 @@ $(document).ready(function(){
           $(".game__popup p").text("You loose!");
           window.clearInterval(timer);
           showpopup();
-          
+
         }
         if(sequence.length == 25){
           $(".game__popup p").text("You win!");
@@ -32,7 +32,7 @@ $(document).ready(function(){
         }
     });
 
-    
+
 });
 function startGame(){
   $(".main-menu").css("display", "none");
@@ -53,7 +53,7 @@ function hidepopup()
 }
 function showResult(){
   //localStorage.setItem('Game', 1);
- 
+
 
     hidepopup();
     $(".results").css({"display":"flex"});
@@ -71,12 +71,12 @@ function randomHex() {
     return "#" + randomColor;
 }
 function randomUniqueNum(range, outputCount) {
-    let arr = []
-    for (let i = 1; i <= range; i++) {
+    var arr = []
+    for (var i = 1; i <= range; i++) {
       arr.push(i)
     }
-    let result = [];
-    for (let i = 1; i <= outputCount; i++) {
+    var result = [];
+    for (var i = 1; i <= outputCount; i++) {
       const random = Math.floor(Math.random() * (range - i));
       result.push(arr[random]);
       arr[random] = arr[range - i];
@@ -84,24 +84,25 @@ function randomUniqueNum(range, outputCount) {
     return result;
 }
 function insertData(win){
-  let best = 10000;
+  var best = 10000;
   if(win){
-    let gameCounter = localStorage.length+1;
+    var gameCounter = localStorage.length+1;
     localStorage.setItem("Game"+gameCounter, time);
   }
-  
-  for(let i=0; i<localStorage.length; i++) {
-    let key = localStorage.key(i);
+
+  for(var i=0; i<localStorage.length; i++) {
+    var key = localStorage.key(i);
     if(parseFloat(localStorage.getItem(key))<best)
     best = parseFloat(localStorage.getItem(key));
   }
-  for(let i=0; i<localStorage.length; i++) {
-    let key = localStorage.key(i);
+  for(var i=0; i<localStorage.length; i++) {
+    var key = localStorage.key(i);
     if(parseFloat(localStorage.getItem(key))==best){
-      $('.podium').append(`<tr class="best"><td>${key}</td><td>${localStorage.getItem(key)}</td></tr>`);
+      var item = localStorage.getItem(key)
+      $('.podium').append('<tr class="best"><td>'+key+'</td>'+item+'<td></td></tr>');
       $(".best td").css("color", "orange");
     }else{
-      $('.podium').append(`<tr><td>${key}</td><td>${localStorage.getItem(key)}</td></tr>`);
+      $('.podium').append('<tr><td>'+key+'</td>'+item+'<td></td></tr>');
     }
   }
   console.log(localStorage);
